@@ -1,0 +1,7 @@
+img {
+    display: block;
+    width: 25%;
+    max-width: 100%;
+    margin: 100px auto 0;
+    filter: grayscale(100%)
+}

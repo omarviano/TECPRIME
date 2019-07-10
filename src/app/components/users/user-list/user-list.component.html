@@ -1,0 +1,33 @@
+<h1 class="title-page text-center">Lista de usuários</h1>
+<div class="table-container" id="tableContainer">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>NOME</th>
+                <th>SOBRENOME</th>
+                <th>EMAIL</th>
+                <th>AÇÕES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of users?.data">
+                <td>
+                    <figure>
+                        <img [src]="item.avatar" alt="Foto do Usuário">
+                    </figure>
+                </td>
+                <td>{{item.first_name}}</td>
+                <td>{{item.last_name}}</td>
+                <td>{{item.email}}</td>
+                <td>
+                    <a routerLink='usuarios/editar-usuario/{{item.id}}' class="action edit" title="Editar(Não Implementado)"><i class="material-icons">edit</i></a>
+                    <a (click)="deleteUser(item)" class="action delete" title="Excluir(Não implementado)"><i class="material-icons">delete</i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="footer-table" id="tableFooter">
+    <label for="page">Página</label> <input type="number" [value]="users?.page" min="1" [max]="users?.total_pages" [(ngModel)]="page" #ctrl="ngModel" (change)="changePage()" id="page"> de {{users?.total_pages}}
+</div>

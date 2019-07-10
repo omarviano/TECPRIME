@@ -1,0 +1,20 @@
+<h1 class="title-page"><i class="material-icons">edit</i>Editar Usuário</h1>
+
+<form [formGroup]="form" (submit)="onSubmit()">
+    <label>Nome</label><input type="text" formControlName="first_name">
+    <label>Sobrenome</label><input type="text" formControlName="last_name">
+    <label>E-mail</label><input type="email" formControlName="email">
+    <label>Imagem</label>
+    <div class="preview-image">
+        <label for="fotoPerfil" id="labelUploadImage" class="label-upload-image"><i class="material-icons">add_a_photo</i></label>
+        <input type="file" name="fotoPerfil" id="fotoPerfil" formControlName='avatar' onchange="loadFile()" accept="image/x-png,image/gif,image/jpeg">
+        <img id="previewImage" />
+        <label for="fotoPerfil" class="cancel-upload" id="cancelUpload" onclick="cancelUpload()"><i class="material-icons">cancel</i>Enviar outra imagem</label>
+    </div>
+    <label></label>
+    <div class="buttons-group">
+        <button type="submit">Cadastrar</button>
+        <button type="reset">Limpar</button>
+        <button routerLink='/usuarios' type="button">Voltar</button>
+    </div>
+</form>

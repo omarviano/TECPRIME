@@ -1,1 +1,418 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    color: #333;
+}
+
+.container {
+    padding: 0
+}
+
+.side-nav {
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    padding: 60px 0;
+    border-right: 1px solid #f0f0f0;
+    background: #fff;
+    top: 55px;
+    transition: all .5s
+}
+
+.side-nav .logo {
+    position: fixed;
+    text-align: center;
+    padding: 10px 20px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    max-width: 174px;
+    font-weight: 700;
+    background: #fff;
+    border-radius: 2px;
+    top: 32px;
+    left: 33px;
+    letter-spacing: 2px;
+    z-index: 999;
+}
+
+.side-nav::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 25px;
+    top: 45px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background: #03A3C6;
+    border-radius: 5px
+}
+
+.side-nav ul {
+    list-style: none;
+    font-size: 14px;
+    padding: 0 10px;
+    margin-bottom: 35px
+}
+
+.side-nav ul li {
+    margin: 10px 0;
+}
+
+.side-nav ul li a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 55px 10px 15px;
+    border-radius: 5px;
+    outline: 0;
+    transition: all .5s
+}
+
+.side-nav ul li a:hover,
+.side-nav ul li a:focus {
+    background: #f0f0f0;
+}
+
+.side-nav ul li a.active {
+    background: #eee
+}
+
+.side-nav ul li a::after {
+    content: '';
+    position: absolute;
+    top: 19px;
+    right: 15px;
+    width: 5px;
+    height: 5px;
+    background: #03A3C6;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all .5s
+}
+
+.side-nav ul li a.active::after {
+    transform: scale(1)
+}
+
+.side-nav ul li a i {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.nav-bar {
+    background: #03A3C6;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 5px 25px;
+}
+
+.nav-bar figure {
+    position: relative;
+    float: right;
+    width: 45px;
+    height: 45px;
+    padding: 1px;
+    border: 1px solid #f0f0f0;
+    border-radius: 50%;
+}
+
+.nav-bar figure figcaption {
+    position: absolute;
+    width: 125px;
+    top: 9px;
+    right: 55px;
+    color: #f0f0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right
+}
+
+.nav-bar figure img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.nav-bar figure:hover {
+    cursor: pointer;
+}
+
+.icon-menu {
+    display: none;
+    float: right;
+    color: #fff;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+
+/*--- DASBOARD ---*/
+
+.content-dashboard {
+    margin-left: 226px;
+    padding: 85px 3% 20px;
+    width: calc(100% - 226px);
+    min-height: 100vh;
+}
+
+.content-dashboard .title-page {
+    font-size: 22px;
+}
+
+.content-dashboard .title-page i {
+    margin-right: 15px;
+    vertical-align: text-top
+}
+
+.text-center {
+    text-align: center
+}
+
+
+/*Table*/
+
+.table-container {
+    max-width: 1000px;
+    margin-top: 40px;
+    overflow-x: auto
+}
+
+table {
+    margin: auto;
+    min-width: 450px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table figure {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    margin: auto
+}
+
+table figure img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+}
+
+table thead tr th,
+table tbody tr td {
+    padding: 5px 20px;
+}
+
+table thead tr th {
+    font-size: 16px
+}
+
+table tbody tr td {
+    font-size: 16px;
+    color: #444
+}
+
+table tbody .action i {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 7px;
+    margin: 0 5px;
+    border-radius: 50%;
+}
+
+table tbody .edit i {
+    background: #148cdc;
+}
+
+table tbody .delete i {
+    background: #dc143c;
+}
+
+.footer-table {
+    max-width: 1000px;
+    text-align: center;
+    padding: 20px;
+    font-weight: 700;
+}
+
+.footer-table input {
+    width: 60px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+
+/*FORM*/
+
+form {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-gap: 10px;
+    text-align: right;
+    margin-top: 25px;
+}
+
+form input {
+    padding: 5px 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 250px;
+}
+
+form input:focus {
+    border-color: #03A3C6;
+    outline: none;
+}
+
+form button {
+    padding: 5px 15px;
+    margin: 5px;
+    border: none;
+    background: none;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+form button:hover,
+.form button:focus {
+    opacity: .8;
+}
+
+form button:active {
+    transform: scale(1.05)
+}
+
+form button:disabled {
+    background: #333;
+    cursor: not-allowed;
+}
+
+form button[type="submit"] {
+    background: rgb(7, 194, 78);
+}
+
+form button[type="reset"] {
+    background: #aaa
+}
+
+form button[type="button"] {
+    background: #03A3C6
+}
+
+
+/*Preview image*/
+
+input[type="file"] {
+    display: none;
+}
+
+.form-konoha .label-upload-image:after {
+    content: "";
+}
+
+.preview-image {
+    text-align: center;
+    margin-top: 10px;
+    min-height: 80px;
+}
+
+.preview-image .label-upload-image {
+    font-size: 30px;
+    padding: 15px 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.preview-image img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto 5px
+}
+
+.cancel-upload {
+    border: 1px solid #ff9800;
+    background-color: rgb(255, 152, 0, .1);
+    color: #ff9800;
+    border-radius: 2px;
+    padding: 5px;
+    display: none;
+    cursor: pointer;
+    max-width: 200px;
+    margin: auto;
+    font-size: 14px
+}
+
+.cancel-upload i {
+    font-size: 16px;
+    margin: 0 7px 0 0;
+    vertical-align: text-top
+}
+
+.cancel-upload:hover {
+    opacity: .5;
+}
+
+.cancel-upload:active {
+    transform: scale(.95)
+}
+
+.preview-image span {
+    display: block;
+    margin: 10px 0;
+    color: #2196F3;
+    font-size: 13px
+}
+
+.preview-image span i {
+    margin-right: 5px;
+    font-size: 15px;
+    border: 1px solid #2196F3;
+    padding: 0 2px;
+    border-radius: 50%;
+}
+
+
+/*Responsive*/
+
+@media(max-width: 720px) {
+    .side-nav {
+        left: -500px;
+    }
+    .content-dashboard {
+        margin-left: 0;
+        width: 100%;
+    }
+    .nav-bar figure {
+        margin-right: 10px
+    }
+    .icon-menu {
+        display: block
+    }
+}
+
+@media(max-width: 400px) {
+    .side-nav {
+        width: 100%
+    }
+    form {
+        text-align: left;
+        grid-template-columns: max-content;
+    }
+}

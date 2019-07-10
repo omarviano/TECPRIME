@@ -1,0 +1,9 @@
+import { User } from './users';
+
+export class UsersResponse {
+    page: number;
+    per_page: number;
+    total: number;
+    total_pages: number;
+    data: User[]
+}
